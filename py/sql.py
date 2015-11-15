@@ -8,7 +8,7 @@ pass_word="root"
 db = torndb.Connection(addr, db_name, user=user_name, password=pass_word)
 def init_db(db):
     print "create table blog"
-    cre='create table blog(id int,content text)'
+    cre='create table blog(id int,title text,content text)'
     db.execute(cre)
 
 def table_chk(db):
@@ -18,9 +18,12 @@ def table_chk(db):
         return True
     else:
         return False
+def get_articles(db,offset=0,rows=5):
+    sql="SELECT id,title,content from blog LIMIT %s,%s"
+    result=db.query(sql,offset,rows)
+    print result
+def add_article(db,id=-1,title="",content=""):
+    sql = "INSERT INTO blog (id,title,content) VALUES (%s,%s,%s)"
+    db.insert(sql,id,title,content)
 if __name__ == "__main__":
-    if table_chk(db):
-        print "db exist"
-    else:
-        print "db not exist"
-        init_db(db)
+    get_articles(db,offset=0,rows=5)
