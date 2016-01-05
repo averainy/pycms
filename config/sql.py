@@ -62,7 +62,7 @@ class DB(object):
         return info
 
 if __name__ == "__main__":
-    #db=DB()
+    db=DB()
     #print db.get_articles(offset=0,rows=2)
-    #print db.get_article()
+    print db.get_article(1)
 
