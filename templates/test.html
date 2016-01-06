@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+<title>横向导航栏</title>
+<style>
+<style>
+.nav ul{
+    max-width:100%;
+    width:auto;/*设置元素宽度为980px*/
+    border:1px solid #000;/*设置一个颜色为#000，宽度为1px的边框*/
+    margin:0px auto 0px auto;/*也可以简写为margin:0 auto*/
+}
+.nav ul li{
+    float:left;/*让li元素左浮动*/
+    width:33%;/*设置元素宽为80px*/
+}
+.nav ul li a{
+    height:28px;/*设置高度为28px*/
+    line-height:28px;/*设置行距为28px，让文字在每行的中间位置*/
+    background:red;/*设置元素的背景为红色*/
+    color:#FFF;/*文字颜色是白色*/
+    margin:5px 10px;
+    font-size:12px;/*用12号字*/
+    display:block;/*这个比较关键，因为a本身就是联级元素，本身不具有宽高，用这个把它变成块级元素，这样前面设置的宽和高就能起作用
+了*/
+    text-align:center;/*让文本居中*/
+    text-decoration:none; /*去掉下划线*/
+}
+.nav ul li a.one{
+    background:green;
+}
+</style>
+</style>
+</head>
+<body>
+<div class="nav">
+ <ul>
+   <li><a class="one" href="index_1.html">男装</a></li>
+   <li><a href="index_2.html">女装</a></li>
+   <li><a href="index_3.html">童装</a></li>
+   </ul>
+</div>
+<p align="center">
+<a href="http://192.168.11.50:8000/link?id=1"><img src="http://192.168.11.50:8000/static/tpn/1_fm.jpg"></a>
+</p>
+<p align="center">
+<a href="http://192.168.11.50:8000/link?id=2"><img src="http://192.168.11.50:8000/static/tpn/2_fm.jpg"></a>
+</p>
+</body>
+</html>
